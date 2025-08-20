@@ -4,7 +4,7 @@
 #define MAX_CHAR 32
 #define CANT_MAT 3
 
-char mejorPromNom[MAX_CHAR], nombre[MAX_CHAR];
+char mejorPromNom[MAX_CHAR], nombre[MAX_CHAR], car;
 float mejorProm=0, prom;
 unsigned int nota, notaTotal, N, i,j;
 
