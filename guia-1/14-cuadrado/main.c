@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned int n, i, j;
-
 int main()
 {
+    unsigned int n, i, j;
+
     printf("Ingrese largo del cuadrado\n");
     scanf("%d", &n);
     for(j=1; j <= n; j++){

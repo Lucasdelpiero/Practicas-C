@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned int total=0, n;
-
 int main()
 {
+    unsigned int total=0, n;
+
     printf("Ingrese numeros naturales para sumar, se muestra el resultado al ingresar 0\n");
     scanf("%u", &n);
     while(n != 0){

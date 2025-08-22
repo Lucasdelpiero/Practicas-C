@@ -3,13 +3,15 @@
 #define max(a,b) (a>b)?a:b
 #define esalf(car) (car>='A' && car<='z' ) ? 1:0
 
-int a, b;
-char car='b', menu;
-/*  Para usar menus conviene usar caracteres, ya que esto admite cualquier tecla presionada, incluso si no es opcion
-    Si se usan enteros, cualquier cosa que no sea numero, va a romper el codigo */
 
 int main()
 {
+
+    int a, b;
+    char car='b', menu;
+    /*  Para usar menus conviene usar caracteres, ya que esto admite cualquier tecla presionada, incluso si no es opcion
+    Si se usan enteros, cualquier cosa que no sea numero, va a romper el codigo */
+
     printf("Bienvenido al programa de macros\n");
     printf("Puede averiguar el maximo entre 2 numeros y si la tecla pulsada es caracter\n");
     do {
