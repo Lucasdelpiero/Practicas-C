@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1756323178 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-1\25-nombreyedad\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
