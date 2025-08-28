@@ -5,6 +5,8 @@
 void creaVars(int *ptr, int n);
 void escribeVars(int *ptr, int n);
 int* creaVarsPtr(int n);
+int suma(int *ptr, int n);
+int producto(int *ptr, int n);
 
 int main()
 {
@@ -13,6 +15,9 @@ int main()
     //creaVars(ptr, CANT);                      // Opcion 1
     ptr = creaVarsPtr(CANT);                    // Opcion 2 devuelve puntero que apunta al lugar de memoria asignado en funcion
     escribeVars(ptr, CANT);                     // Preguntar cual es mejor y cual (creo que la 2)
+    printf("Su suma es: %d\n", suma(ptr, CANT));
+    printf("Su producto es: %d\n", producto(ptr, CANT));
+
     free(ptr);
 
     return 0;
@@ -52,5 +57,31 @@ void escribeVars(int *ptr, int n){
         ptrTemp++;
     }
 }
+
+int suma(int *ptr, int n){
+    unsigned int i;
+    int res = 0;
+    int *ptrTemp = ptr;
+    for(i=0; i<n; i++){
+        res += *ptrTemp;
+        ptrTemp++;
+    }
+    return res;
+}
+
+int producto(int *ptr, int n){
+    unsigned int i;
+    int *ptrTemp = ptr;
+    int res = *ptrTemp;
+    ptrTemp++;
+    for(i=1; i<n; i++){
+        res *= *ptrTemp;
+        ptrTemp++;
+    }
+    return res;
+}
+
+
+
 
 
