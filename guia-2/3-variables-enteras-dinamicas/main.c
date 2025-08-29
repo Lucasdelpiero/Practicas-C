@@ -4,74 +4,37 @@
 
 void creaVars(int *ptr, int n);
 void escribeVars(int *ptr, int n);
+void crearEnteroDinamico(int* *ptr);
 int* creaVarsPtr(int n);
 int suma(int *ptr, int n);
 int producto(int *ptr, int n);
 
 int main()
 {
-    int *ptr;
-    //ptr = (int *) malloc(sizeof(int) * CANT); // Opcion 1 asigna memoria en main
-    //creaVars(ptr, CANT);                      // Opcion 1
-    ptr = creaVarsPtr(CANT);                    // Opcion 2 devuelve puntero que apunta al lugar de memoria asignado en funcion
-    escribeVars(ptr, CANT);                     // Preguntar cual es mejor y cual (creo que la 2)
-    printf("Su suma es: %d\n", suma(ptr, CANT));
-    printf("Su producto es: %d\n", producto(ptr, CANT));
+    int *ptr1, *ptr2, *ptr3;
+    crearEnteroDinamico(&ptr1);
+    crearEnteroDinamico(&ptr2);
+    crearEnteroDinamico(&ptr3);
+    printf("Su suma es: %d\n", *ptr1 + *ptr2 + *ptr3);
+    printf("Su producto es: %d\n", (*ptr1) * (*ptr2) * (*ptr3) );
 
-    free(ptr);
+    free(ptr1); free(ptr2); free(ptr3);
 
     return 0;
 }
 
-void creaVars(int *ptr, int n){
-    unsigned int i;
-
-    for(i=0; i < n; i++){
-        printf("Ingrese el valor del valor n:%d\n", i+1);
-        scanf("%d", (ptr + i));
-    }
-}
-
-int* creaVarsPtr(int n){
-    unsigned int i;
-    int *ptr = malloc(sizeof(int)*n);
-
-    for(i=0; i < n; i++){
-        printf("Ingrese el valor del valor n:%d\n", i+1);
-        scanf("%d", (ptr + i));
-    }
-
-    return ptr;
-}
-
-void escribeVars(int *ptr, int n){
-    unsigned int i;
-
-    for(i=0; i < n; i++){
-        printf("Valor n:%d = %d\n", i+1, *(ptr + i));
-    }
+void crearEnteroDinamico(int **ptr){
+    // ptr apunta a direccion de memoria de la variable tipo puntero
+    // *ptr es el contenido del puntero(direccion que guarda la variable)
+    *ptr = (int *) malloc(sizeof(int));
+    printf("Ingrese valor\n");
+    scanf("%d", *ptr);
 }
 
 
-int suma(int *ptr, int n){
-    unsigned int i;
-    int res = 0;
 
-    for(i=0; i<n; i++){
-        res += *(ptr + i);
-    }
-    return res;
-}
 
-int producto(int *ptr, int n){
-    unsigned int i;
-    int res = *ptr;
 
-    for(i=1; i<n; i++){
-        res *= *(ptr + i);
-    }
-    return res;
-}
 
 
 
