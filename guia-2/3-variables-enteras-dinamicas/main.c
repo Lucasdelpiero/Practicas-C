@@ -25,24 +25,20 @@ int main()
 
 void creaVars(int *ptr, int n){
     unsigned int i;
-    int *ptrTemp = ptr;
 
     for(i=0; i < n; i++){
         printf("Ingrese el valor del valor n:%d\n", i+1);
-        scanf("%d", ptrTemp);
-        ptrTemp++;
+        scanf("%d", (ptr + i));
     }
 }
 
 int* creaVarsPtr(int n){
     unsigned int i;
     int *ptr = malloc(sizeof(int)*n);
-    int *ptrTemp = ptr;
 
     for(i=0; i < n; i++){
         printf("Ingrese el valor del valor n:%d\n", i+1);
-        scanf("%d", ptrTemp);
-        ptrTemp++;
+        scanf("%d", (ptr + i));
     }
 
     return ptr;
@@ -50,33 +46,29 @@ int* creaVarsPtr(int n){
 
 void escribeVars(int *ptr, int n){
     unsigned int i;
-    int *ptrTemp = ptr;
 
     for(i=0; i < n; i++){
-        printf("Valor n:%d = %d\n", i+1, *ptrTemp);
-        ptrTemp++;
+        printf("Valor n:%d = %d\n", i+1, *(ptr + i));
     }
 }
+
 
 int suma(int *ptr, int n){
     unsigned int i;
     int res = 0;
-    int *ptrTemp = ptr;
+
     for(i=0; i<n; i++){
-        res += *ptrTemp;
-        ptrTemp++;
+        res += *(ptr + i);
     }
     return res;
 }
 
 int producto(int *ptr, int n){
     unsigned int i;
-    int *ptrTemp = ptr;
-    int res = *ptrTemp;
-    ptrTemp++;
+    int res = *ptr;
+
     for(i=1; i<n; i++){
-        res *= *ptrTemp;
-        ptrTemp++;
+        res *= *(ptr + i);
     }
     return res;
 }
