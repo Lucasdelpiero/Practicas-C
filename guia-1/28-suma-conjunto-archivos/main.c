@@ -8,7 +8,7 @@ int main()
 
     arch = fopen("datos.txt", "rt");
     fscanf(arch, "%d", &n);
-    while(n != 0){
+    while(!feof(arch)){
         total += n;
         printf("%d leido del archivo\n", n );
         fscanf(arch, "%d", &n);

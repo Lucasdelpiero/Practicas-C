@@ -37,7 +37,7 @@ void leerBinario(){
     fread(&value, sizeof(float), 1, archbin);
     min = value; max = value; total = 0;
 
-    while (feof(archbin) == 0){
+    while (!feof(archbin)){
         cantMediciones += 1;
         if (value < min) {
             min = value;

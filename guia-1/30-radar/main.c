@@ -34,7 +34,7 @@ void generarArchivo(){
 
     printf("Autos leidos del archivo de texto:\n\n");
 
-    while (strcmp(patente, "0000000")) {
+    while (!feof(archtxt)) {
         strcat(fecha, " ");
         strcat(fecha, hora);
         strcpy(vehiculo.patente, patente);
@@ -60,7 +60,8 @@ void leerArchivo(){
     fread(&vehiculo, sizeof(Tvehiculo), 1, archbin);
 
     printf("Autos que superaron en un %s la velocidad maxima permitida:\n\n", "20%");
-    while (feof(archbin) == 0){
+    //while (feof(archbin) == 0){
+    while (!feof(archbin)){
         printf("PAT: %s, VEL: %3u, MAX_PERM: %3u, FECHA: %s\n",
               vehiculo.patente, vehiculo.velocidad, vehiculo.velocidadMaxima, vehiculo.fecha);
         fread(&vehiculo, sizeof(Tvehiculo), 1, archbin);
