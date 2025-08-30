@@ -2,12 +2,7 @@
 #include <stdlib.h>
 #define CANT 3
 
-void creaVars(int *ptr, int n);
-void escribeVars(int *ptr, int n);
 void crearEnteroDinamico(int* *ptr);
-int* creaVarsPtr(int n);
-int suma(int *ptr, int n);
-int producto(int *ptr, int n);
 
 int main()
 {
