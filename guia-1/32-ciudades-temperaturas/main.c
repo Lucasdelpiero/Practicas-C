@@ -33,12 +33,17 @@ void creaBinario(){
         printf("Valores leidos del archivo de texto:\n");
         fscanf(archt, "%s %d %f %f", medicion.provincia, &(medicion.dia),&(medicion.min), &(medicion.max) );
         archbn = fopen("datos.dat", "wb");
-        while(!feof(archt)){
-            fwrite(&medicion, sizeof(Tmedicion), 1, archbn);
-            printf("%22s, dia: %2d, min: %4.1f, max: %4.1f\n", medicion.provincia, medicion.dia, medicion.min, medicion.max );
-            fscanf(archt, "%s %d %f %f", medicion.provincia, &(medicion.dia),&(medicion.min), &(medicion.max) );
+        if (archbn == NULL) {
+            printf("Error al cargar el archivo binario\n");
+            close(archt);
+        } else {
+            while(!feof(archt)){
+                fwrite(&medicion, sizeof(Tmedicion), 1, archbn);
+                printf("%22s, dia: %2d, min: %4.1f, max: %4.1f\n", medicion.provincia, medicion.dia, medicion.min, medicion.max );
+                fscanf(archt, "%s %d %f %f", medicion.provincia, &(medicion.dia),&(medicion.min), &(medicion.max) );
+            }
+            fclose(archbn); fclose(archt);
         }
-        fclose(archbn); fclose(archt);
     }
 }
 

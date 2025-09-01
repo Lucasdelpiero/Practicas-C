@@ -18,15 +18,29 @@ void generarBinario(){
     FILE *archtxt, *archbin;
     float value;
     archtxt = fopen("datos.txt", "rt");
-    archbin = fopen("datos.dat", "wb");
-    fscanf(archtxt, "%f", &value);
-
-
-    while (value != 0){
-        fwrite(&value , sizeof(float), 1, archbin);
-        fscanf(archtxt, "%f", &value);
+    if (archtxt == NULL) {
+        printf("datos.txt no se encontro\n");
+        fclose(archtxt);
+    } else {
+        archbin = fopen("datos.dat", "wb");
+        if(archbin == NULL){
+            printf("datos.dat no se encontro\n");
+            fclose(archtxt);
+        } else {
+            fscanf(archtxt, "%f", &value);
+            while (!feof(archtxt)){
+                fwrite(&value , sizeof(float), 1, archbin);
+                fscanf(archtxt, "%f", &value);
+            }
+            fclose(archtxt); fclose(archbin);
+        }
     }
-    fclose(archtxt); fclose(archbin);
+
+
+
+
+
+
 }
 
 void leerBinario(){

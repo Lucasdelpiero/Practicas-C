@@ -29,28 +29,36 @@ void generarArchivo(){
     Tvehiculo vehiculo;
 
     archtxt = fopen("datos.txt", "rt");
-    archbin = fopen("datos.dat", "wb");
-    fscanf(archtxt, "%s %u %u %s %s", patente, &velocidad, &velocidadMaxima, fecha, hora);
+    if (archtxt == NULL){
+        printf("No se encontro el archivo datos.txt\n");
+    } else {
+        archbin = fopen("datos.dat", "wb");
+        if (archbin == NULL){
+            printf("No se contro el archivo datos.dat\n");
+            close(archtxt);
+        } else {
+            fscanf(archtxt, "%s %u %u %s %s", patente, &velocidad, &velocidadMaxima, fecha, hora);
+            printf("Autos leidos del archivo de texto:\n\n");
 
-    printf("Autos leidos del archivo de texto:\n\n");
+            while (!feof(archtxt)) {
+                strcat(fecha, " ");
+                strcat(fecha, hora);
+                strcpy(vehiculo.patente, patente);
+                strcpy(vehiculo.fecha, fecha);
+                vehiculo.velocidad = velocidad;
+                vehiculo.velocidadMaxima = velocidadMaxima;
+                printf("PAT: %s, VEL: %3u, MAX_PERM: %3u, FECHA: %s\n",
+                      vehiculo.patente, vehiculo.velocidad, vehiculo.velocidadMaxima, vehiculo.fecha);
 
-    while (!feof(archtxt)) {
-        strcat(fecha, " ");
-        strcat(fecha, hora);
-        strcpy(vehiculo.patente, patente);
-        strcpy(vehiculo.fecha, fecha);
-        vehiculo.velocidad = velocidad;
-        vehiculo.velocidadMaxima = velocidadMaxima;
-        printf("PAT: %s, VEL: %3u, MAX_PERM: %3u, FECHA: %s\n",
-              vehiculo.patente, vehiculo.velocidad, vehiculo.velocidadMaxima, vehiculo.fecha);
-
-        if ((float)velocidad / velocidadMaxima > 1.2){
-            fwrite(&vehiculo, sizeof(Tvehiculo), 1, archbin);
-        }
-        fscanf(archtxt, "%s %u %u %s %s", patente, &velocidad, &velocidadMaxima, fecha, hora);
+                if ((float)velocidad / velocidadMaxima > 1.2){
+                    fwrite(&vehiculo, sizeof(Tvehiculo), 1, archbin);
+                }
+                fscanf(archtxt, "%s %u %u %s %s", patente, &velocidad, &velocidadMaxima, fecha, hora);
+            }
+            printf("==============================================================\n");
+            fclose(archtxt); fclose(archbin);
+            }
     }
-    printf("==============================================================\n");
-    fclose(archtxt); fclose(archbin);
 }
 
 void leerArchivo(){
@@ -59,12 +67,15 @@ void leerArchivo(){
     Tvehiculo vehiculo;
     fread(&vehiculo, sizeof(Tvehiculo), 1, archbin);
 
-    printf("Autos que superaron en un %s la velocidad maxima permitida:\n\n", "20%");
-    //while (feof(archbin) == 0){
-    while (!feof(archbin)){
-        printf("PAT: %s, VEL: %3u, MAX_PERM: %3u, FECHA: %s\n",
-              vehiculo.patente, vehiculo.velocidad, vehiculo.velocidadMaxima, vehiculo.fecha);
-        fread(&vehiculo, sizeof(Tvehiculo), 1, archbin);
+    if (archbin == NULL){
+        printf("No se encontro el archivo\n");
+    } else {
+        printf("Autos que superaron en un %s la velocidad maxima permitida:\n\n", "20%");
+        while (!feof(archbin)){
+            printf("PAT: %s, VEL: %3u, MAX_PERM: %3u, FECHA: %s\n",
+                  vehiculo.patente, vehiculo.velocidad, vehiculo.velocidadMaxima, vehiculo.fecha);
+            fread(&vehiculo, sizeof(Tvehiculo), 1, archbin);
+        }
+        fclose(archbin);
     }
-    fclose(archbin);
 }

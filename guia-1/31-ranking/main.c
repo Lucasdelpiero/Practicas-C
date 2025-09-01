@@ -34,23 +34,27 @@ void creaArchivo(){
 
     if(archtxt == NULL){
         printf("El archivo  datos.txt no existe\n");
-        fclose(archtxt);
     } else {
         archbin = fopen("datos.dat", "wb");
-        while(!feof(archtxt)){
-            strcpy(nombreYapellido, "");
-            strcat(nombreYapellido, apellido);
-            strcat(nombreYapellido, " ");
-            strcat(nombreYapellido, nombre);
+        if (archbin == NULL) {
+            printf("El archivo datos.dat no existe\n");
+            fclose(archtxt);
+        } else {
+            while(!feof(archtxt)){
+                strcpy(nombreYapellido, "");
+                strcat(nombreYapellido, apellido);
+                strcat(nombreYapellido, " ");
+                strcat(nombreYapellido, nombre);
 
-            strcpy(tenista.nombreYapellido, nombreYapellido);
-            strcpy(tenista.nacionalidad, nacionalidad);
-            tenista.puntaje = puntaje;
+                strcpy(tenista.nombreYapellido, nombreYapellido);
+                strcpy(tenista.nacionalidad, nacionalidad);
+                tenista.puntaje = puntaje;
 
-            fwrite(&tenista, sizeof(Ttenista), 1, archbin);
-            fscanf(archtxt, "%s %s %s %d", nombre, apellido, nacionalidad, &puntaje);
+                fwrite(&tenista, sizeof(Ttenista), 1, archbin);
+                fscanf(archtxt, "%s %s %s %d", nombre, apellido, nacionalidad, &puntaje);
+            }
+            fclose(archtxt); fclose(archbin);
         }
-        fclose(archtxt); fclose(archbin);
     }
 }
 
