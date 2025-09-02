@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1756768488 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\teoria-recursividad\e-2-vocales-por-columna\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
