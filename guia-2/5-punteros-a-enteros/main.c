@@ -3,28 +3,27 @@
 
 #define MAX 32
 
-void cargaNumeros(int *ptr[MAX], int *n);
-void mostrarPositivos(int *ptr[MAX], int n);
-void liberaMemoria(int *ptr[MAX], int *n);
+void cargaNumeros(int *vec[MAX], int *n);
+void mostrarPositivos(int *vec[MAX], int n);
+void liberaMemoria(int *vec[MAX], int *n);
 
 int main()
 {
-    int *ptr[MAX], n;
-    cargaNumeros(&ptr, &n);
-    mostrarPositivos(&ptr, n);
-    liberaMemoria(&ptr, &n);
+    int *vec[MAX], n;
+    cargaNumeros(vec, &n);
+    mostrarPositivos(vec, n);
+    liberaMemoria(vec, &n);
     return 0;
 }
 
 void cargaNumeros(int *vec[], int *n){
-    *n = 0;
     int value;
     int i;
     FILE *archt;
+    *n = 0;
     archt = fopen("datos.txt", "rt");
     if (archt == NULL){
         printf("Hubo un error en la carga del archivo\n");
-        fclose(archt);
     } else {
         fscanf(archt, "%d", &value);
         while (!feof(archt)) {
@@ -36,11 +35,11 @@ void cargaNumeros(int *vec[], int *n){
         }
         printf("valores cargados:\n");
         for(i=0; i<(*n); i++){
-            printf("%d ", *(vec[i]);
+            printf("%d ", *vec[i]);
         }
         printf("\n");
 
-
+        fclose(archt);
     }
 }
 
@@ -63,6 +62,6 @@ void liberaMemoria(int *vec[], int *n) {
         printf("Libera el valor %4d del puntero %p\n", *vec[i], vec[i]);
         free(vec[i]);
     }
-    n = 0;
+    *n = 0;
 }
 
