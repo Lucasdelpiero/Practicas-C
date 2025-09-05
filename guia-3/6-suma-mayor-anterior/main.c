@@ -44,25 +44,18 @@ int mayorFilaAnterior(int mat[][MAX], int i, int j, int n, int m, int suma, int 
     }
     else
         if (j <= m){ // Avanza sumando fila a fila
-            if (j == 0) {
-                suma = mat[i][j];
-            } else {
-                suma += mat[i][j];
-            }
-            return mayorFilaAnterior(mat, i, j + 1, n, m, suma, sumaAnt);
+            return mayorFilaAnterior(mat, i, j + 1, n, m, suma + mat[i][j], sumaAnt);
         }
     else { // j > m     Comprueba si cumple o no la condicion
         if(i == 0) {
             if(suma % 2 == 0) { // Primera fila es o no par
-                sumaAnt = suma;
-                return mayorFilaAnterior(mat, i + 1, 0, n, m, suma, sumaAnt);
+                return mayorFilaAnterior(mat, i + 1, 0, n, m, 0, suma);
             } else {
                 return 0;
             }
         } else { // Suma es o no mayor a la suma anterior
             if (suma > sumaAnt){
-                sumaAnt = suma;
-                return mayorFilaAnterior(mat, i + 1, 0, n, m, suma, sumaAnt);
+                return mayorFilaAnterior(mat, i + 1, 0, n, m, 0, suma);
 
             } else { // suma <= sumaAnt
                 return 0;

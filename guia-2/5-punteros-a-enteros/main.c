@@ -29,15 +29,14 @@ void cargaNumeros(int *vec[], int *n){
         fscanf(archt, "%d", &value);
         while (!feof(archt)) {
             vec[*n] = (int *) malloc(sizeof(int)); // vec es el puntero al array
-            *vec[*n] = value;                      // *vec es el contenido del lugar al que apunta el puntero del array
+            *(vec[*n]) = value;                      // *vec es el contenido del lugar al que apunta el puntero del array
             //printf("valor del puntero %d\n", *(vec[*n]));
             (*n)++;
             fscanf(archt, "%d", &value);
         }
-
         printf("valores cargados:\n");
         for(i=0; i<(*n); i++){
-            printf("%d ", *vec[i]);
+            printf("%d ", *(vec[i]);
         }
         printf("\n");
 
