@@ -3,7 +3,7 @@
 
 #define MAX 32
 
-int simetrica(int mat[MAX][MAX], int i, int j, int n);
+int simetrica(int mat[MAX][MAX], int i, int j);
 
 int main()
 {
@@ -25,13 +25,13 @@ int main()
     int n = 5;
 
 
-    if (simetrica(A, n-1, n-1, n-1)) {
+    if (simetrica(A, n-2, n-1)) {
         printf("A es simetrica\n");
     } else {
         printf("A no es simetrica\n");
     }
 
-    if (simetrica(B, n-1, n-1, n-1)) {
+    if (simetrica(B, n-2, n-1)) {
         printf("B es simetrica\n");
     } else {
         printf("B no es simetrica\n");
@@ -41,20 +41,17 @@ int main()
 }
 
 
-int simetrica(int mat[MAX][MAX], int i, int j, int n){
-    if (i == n && j == n){ // Hace mas facil ingresar el primer llamado con todo n - 1
-        return simetrica(mat, i - 1, j, n);
-    } else
-        if (j < 0) {
+int simetrica(int mat[MAX][MAX], int i, int j){
+    if (j < 0) {
             return 1;
-        }
+    }
         else
             if(i < 0) {
-                return simetrica(mat, n - 1, n - 1, n - 1);
+                return simetrica(mat, j - 2,j - 1);
             }
             else
                 if (mat[i][j] == mat[j][i]) {
-                    return simetrica(mat, i - 1, j, n);
+                    return simetrica(mat, i - 1);
                 }
                 else {
                     return 0;
