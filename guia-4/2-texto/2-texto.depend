@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1757559772 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\2-texto\main.c
+	<stdio.h>
+	<stdlib.h>
+	"textoest.h"
+
+1757557209 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\2-texto\textodin.c
+
+1757558724 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\2-texto\textoest.h
+
+1757559872 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\2-texto\textoest.c
+	"textoest.h"
+	<stdio.h>
+
