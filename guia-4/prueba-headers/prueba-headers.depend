@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1757549634 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\prueba-headers\main.c
+	<stdio.h>
+	<stdlib.h>
+	"persona.h"
+
+1757549275 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\prueba-headers\persona.h
+
+1757549572 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\prueba-headers\persona.c
+	<stdio.h>
+	<string.h>
+	"persona.h"
+

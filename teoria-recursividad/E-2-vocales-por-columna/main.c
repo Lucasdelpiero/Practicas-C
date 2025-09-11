@@ -4,28 +4,24 @@
 
 #define MAX 32
 
-void vocalesPorColumna(char mat[MAX][MAX], int i, int j, int m,int *cant);
+void vocalesPorColumna(char mat[MAX][MAX], int i, int j, int m,int cant);
 
 int main()
 {
     int m, cant;
     char mat[MAX][MAX] = {  {'A','5','F'},
                             {'4','4','A'},
-                            {'F','3','T'} };
-    m = 2;
-    printf("Cant de vocales por columna:\n");
-    vocalesPorColumna(mat, m, m, m, &cant);
+                            {'F','3','A'} };
+    m = 3;
+    printf("COL VOC:\n");
+    vocalesPorColumna(mat, m -1, m - 1, m -1, cant);
     return 0;
 }
 
-void vocalesPorColumna(char mat[][MAX], int i, int j, int m, int *cant){
-    //printf("mat[%d][%d] = %c\n",i, j, mat[i][j]);
-    if (i == m) {
-        *cant = 0;
-    }
-
-    if ( isalpha((int)mat[i][j]) ) {
-        *cant += 1;
+void vocalesPorColumna(char mat[][MAX], int i, int j, int m, int cant){
+    if (mat[i][j]=='a' || mat[i][j]=='A' || mat[i][j]=='e' || mat[i][j]=='E' || mat[i][j]=='i' || mat[i][j]=='I' ||
+        mat[i][j]='o' || mat[i][j]=='O' || mat[i][j]=='u' ||mat[i][j]=='U' ) {
+            cant++;
     }
 
     if (i > 0) {
@@ -33,10 +29,10 @@ void vocalesPorColumna(char mat[][MAX], int i, int j, int m, int *cant){
     }
     else
         if (j > 0) {
-        printf("En la columna %d hay %d vocales\n", j , *cant);
-        vocalesPorColumna(mat, m, j - 1, m, cant);
+        printf("%d  %d \n", j + 1 , cant);
+        vocalesPorColumna(mat, m, j - 1, m, 0);
     } else {
-       printf("En la columna %d hay %d vocales\n", j , *cant);
+       printf("%d  %d \n", j + 1, cant);
     }
 }
 

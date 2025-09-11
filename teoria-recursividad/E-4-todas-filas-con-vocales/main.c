@@ -14,8 +14,8 @@ int main()
                             {'6','5','E'},
                             {'5','5','U'},
                             };
-    int n = 2;
-    if (todasConVocal(mat, n, n, n)){
+    int n = 3;
+    if (todasConVocal(mat, n-1, n-1, n-1)){
         printf("Todas las filas tienen vocal\n");
     } else {
         printf("Hay al menos una fila sin vocal\n");
@@ -25,18 +25,18 @@ int main()
 }
 
 int todasConVocal(char mat[][MAX], int i, int j,int n){
-    if (i < 0) {
+    if (i < 0)
         return 1;
-    } else
-        if (j < 0 ) {
+     else
+        if (j < 0 )
             return 0;
-    } else
-        if (esvocal(mat[i][j])) {
+     else
+        if (esvocal(mat[i][j]))
             return todasConVocal(mat, i - 1, n, n);
-        }
-        else {
+
+        else
             return todasConVocal(mat, i , j - 1, n);
-        }
+
 }
 
 

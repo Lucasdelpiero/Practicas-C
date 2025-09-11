@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1757556465 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\1-num-fraccionarios\main.c
+	<stdio.h>
+	<stdlib.h>
+	"fraccion.h"
+
+1757552763 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\1-num-fraccionarios\fraccion.h
+
+1757556063 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-4\1-num-fraccionarios\fraccion.c
+	"fraccion.h"
+
