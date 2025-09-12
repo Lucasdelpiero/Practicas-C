@@ -13,7 +13,6 @@ Ttexto crear(char *c) {
         ptr++;
     }
 
-    int i;
     return texto;
 }
 
@@ -57,7 +56,18 @@ Ttexto concatenar(Ttexto t1, Ttexto t2) {
     }
     return t3;
 }
-Ttexto reemplazar(Ttexto t, char c, char nc);
-Ttexto subTexto(Ttexto t, int deste, int hasta);
+Ttexto reemplazar(Ttexto t, char c, char nc){
+    int i;
+    for(i=0; i < t.tam; i++){
+        if(c == t.texto[i]){
+            t.texto[i] = c;
+        }
+    }
+}
+
+Ttexto subTexto(Ttexto t, int deste, int hasta){
+
+}
+
 int comienzaCon(Ttexto t, Ttexto pref);
 int terminaCon(Ttexto t, Ttexto suf);

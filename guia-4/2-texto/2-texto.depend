@@ -12,3 +12,24 @@
 	"textoest.h"
 	<stdio.h>
 
+1757695702 source:c:\users\usuario\desktop\progra b\practicas-c\guia-4\2-texto\main.c
+	<stdio.h>
+	<stdlib.h>
+	"textoest.h"
+	"textodin.h"
+
+1757692947 c:\users\usuario\desktop\progra b\practicas-c\guia-4\2-texto\textoest.h
+	<stdio.h>
+
+1757695138 source:c:\users\usuario\desktop\progra b\practicas-c\guia-4\2-texto\textodin.c
+	"textodin.h"
+	<stdlib.h>
+	<stdio.h>
+
+1757692999 source:c:\users\usuario\desktop\progra b\practicas-c\guia-4\2-texto\textoest.c
+	"textoest.h"
+	<stdio.h>
+
+1757695592 c:\users\usuario\desktop\progra b\practicas-c\guia-4\2-texto\textodin.h
+	<stdio.h>
+
