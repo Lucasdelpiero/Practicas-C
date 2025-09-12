@@ -13,17 +13,10 @@ Ttexto crear(char *c) {
         ptr++;
     }
 
-    int i;
     return texto;
 }
-
-// En el estatico que se hace???
 /*
 void destruir(Ttexto t) {
-    int i;
-    for(i = 0; i < t.tam; i++){
-        t.texto[i] = '';
-    }
     t.tam = 0;
 }
 */
