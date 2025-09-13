@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1757796932 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilae.h"
+	"pilad.h"
+	"colae.h"
+	"colad.h"
+
+1757790596 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\pilae.c
+	"pilae.h"
+
+1757789302 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\pilae.h
+
+1757792721 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\pilad.c
+	"pilad.h"
+	<stdio.h>
+	<stdlib.h>
+
+1757792264 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\pilad.h
+
+1757793715 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\colae.c
+	"colae.h"
+
+1757793288 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\colae.h
+
+1757796862 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\colad.c
+	"colad.h"
+	<stdlib.h>
+	<stdio.h>
+
+1757796242 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\1-pilaycola\colad.h
+
