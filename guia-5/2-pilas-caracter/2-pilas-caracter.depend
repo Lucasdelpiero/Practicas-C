@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1757792721 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\2-pilas-caracter\pilad.c
+	"pilad.h"
+	<stdio.h>
+	<stdlib.h>
+
+1758228901 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\2-pilas-caracter\pilad.h
+
+1758229827 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\2-pilas-caracter\pilae.c
+	"pilae.h"
+
+1758228908 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\2-pilas-caracter\pilae.h
+
+1758230362 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\2-pilas-caracter\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilae.h"
+	"pilad.h"
+
