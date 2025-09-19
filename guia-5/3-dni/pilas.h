@@ -1,3 +1,11 @@
+#ifndef HEADER_500DEE12233244
+#define HEADER_500DEE12233244
+#endif // header guard
+
+#ifndef HEADER_6DDC864E7A782E11
+#define HEADER_6DDC864E7A782E11
+#endif // header guard
+
 // Pila estatica
 #define MAX_PE 50
 

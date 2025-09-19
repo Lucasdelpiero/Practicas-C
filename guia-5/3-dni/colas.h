@@ -1,6 +1,10 @@
+#ifndef HEADER_88C6FDAC4E61971E
+#define HEADER_88C6FDAC4E61971E
+#endif // header guard
+
 #define MAX_CE 50
 
-// Cola estatoca
+// Cola estatica
 
 typedef int TelemC;
 
@@ -32,4 +36,9 @@ int vaciaCd(TcolaD c);
 void poneCd(TcolaD *c, TelemC x);
 void sacaCd(TcolaD *c, TelemC *x);
 TelemC consultaCd(TcolaD c);
+
+// Cola circular
+void poneCc (TcolaE*C, TelemC X);
+void sacaCc (TcolaE *C, TelemC *X);
+
 

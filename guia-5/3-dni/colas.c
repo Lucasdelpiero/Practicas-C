@@ -66,6 +66,38 @@ void sacaCd(TcolaD *c, TelemC *x) {
 TelemC consultaCd(TcolaD c){
     if (c.pri != NULL)
         return c.pri->dato;
+    else
+        return NULL;
+}
+
+// Cola circular
+
+void poneCc (TcolaE*C, TelemC X) {
+    if (!((*C).ult==MAX_CE-1 && (*C).pri==0 || (*C).ult+1==(*C).pri) ) {
+        if ((*C).pri==-1){
+            (*C).pri = 0;
+            (*C).ult = 0;
+        }
+        else
+            if ((*C).ult == MAX_CE-1)
+                (*C).ult = 0;
+    else
+        (*C).ult += 1;
+    (*C).datos[(*C).ult]=X;
+    }
+}
+
+void sacaCc (TcolaE *C, TelemC *X) {
+    if ((*C).pri != -1) {
+        *X = (*C).datos[(*C).pri];
+        if ((*C).pri == (*C).ult)
+            iniciaCe(C);
+        else
+            if ((*C).pri == MAX_CE-1)
+                (*C).pri = 0;
+    else
+        (*C).pri += 1;
+    }
 }
 
 
