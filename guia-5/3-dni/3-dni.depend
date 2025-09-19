@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1743445502 source:c:\users\usuario\desktop\progra b\practicas-c\guia-5\3-dni\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1758294088 source:c:\users\usuario\desktop\progra b\practicas-c\guia-5\3-dni\pilas.c
+	"pilas.h"
+	<stdlib.h>
+
+1758294373 c:\users\usuario\desktop\progra b\practicas-c\guia-5\3-dni\pilas.h
+
+1758294428 source:c:\users\usuario\desktop\progra b\practicas-c\guia-5\3-dni\colas.c
+	"colas.h"
+	<stdlib.h>
+
+1758294417 c:\users\usuario\desktop\progra b\practicas-c\guia-5\3-dni\colas.h
+
