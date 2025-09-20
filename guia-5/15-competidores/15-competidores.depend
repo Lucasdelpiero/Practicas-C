@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1758405430 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\15-competidores\colas.c
+	"colas.h"
+	<stdlib.h>
+	<string.h>
+
+1758405365 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\15-competidores\colas.h
+
+1758409257 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\15-competidores\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"colas.h"
+	"pilas.h"
+
+1758407777 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\15-competidores\pilas.h
+
+1758408726 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\15-competidores\pilas.c
+	"pilas.h"
+	<stdlib.h>
+
