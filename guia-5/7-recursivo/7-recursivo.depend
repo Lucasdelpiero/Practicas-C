@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1758317505 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\colas.c
+	"colas.h"
+	<stdlib.h>
+
+1758317485 c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\colas.h
+
+1758310304 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\pilas.c
+	"pilas.h"
+	<stdlib.h>
+
+1758316676 c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\pilas.h
+
+1758430428 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\7-recursivo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../../librerias/pilas.h"
+	"../../librerias/colas.h"
+
