@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1758317505 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\14-palindromos\colas.c
+	"colas.h"
+	<stdlib.h>
+
+1758494243 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\14-palindromos\colas.h
+
+1758310304 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\14-palindromos\pilas.c
+	"pilas.h"
+	<stdlib.h>
+
+1758494247 c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\14-palindromos\pilas.h
+
+1758494856 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-5\14-palindromos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilas.h"
+	"colas.h"
+
