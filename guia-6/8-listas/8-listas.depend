@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1759209910 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-6\8-listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
