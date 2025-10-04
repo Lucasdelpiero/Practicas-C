@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1759557980 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\primer parcial\2022-2c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pilas.h"
+
+1759551662 c:\users\cabro\onedrive\desktop\progra b\practicas-c\primer parcial\2022-2c\pilas.h
+
+1759551652 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\primer parcial\2022-2c\pilas.c
+	"pilas.h"
+	<stdlib.h>
+
