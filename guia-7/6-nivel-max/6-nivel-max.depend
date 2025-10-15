@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1760491448 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-7\6-nivel-max\main.c
+1760498617 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-7\6-nivel-max\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	<ctype.h>
 
