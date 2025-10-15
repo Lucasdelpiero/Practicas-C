@@ -13,9 +13,14 @@ typedef nodoD * Pnodo;
 
 typedef struct nodoLD {
     Pnodo pri, ult;
-} nodoLD;
+} nodoLD; 
+/*
+typedef struct  {
+    Pnodo pri, ult;
+} TLD;                // Esta seria la declaracion correcta
+*/
 
-typedef nodoLD * TLD;
+typedef nodoLD * TLD; // NO VA ESTE PUNTERO
 
 void insertaLD(TLD * L, char x);
 void mostrarLD(TLD L);
