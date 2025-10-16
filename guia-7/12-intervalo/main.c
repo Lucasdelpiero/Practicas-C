@@ -36,10 +36,13 @@ int main(){
 
 void cantIntervalo(arbol a, int A, int B, int *cant){
     if(a != NULL){
+        printf("%d\n",a->dato);
         if (a->dato > A && a->dato < B)
             (*cant)++;
-        cantIntervalo(a->izq,A,B,cant);
-        cantIntervalo(a->der,A,B,cant);
+        if (a->izq != NULL && a->dato > A)
+            cantIntervalo(a->izq,A,B,cant);
+        if (a->der != NULL && a->dato < B)
+            cantIntervalo(a->der,A,B,cant);
     }
 }
 
