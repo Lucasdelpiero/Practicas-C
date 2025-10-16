@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+#define ERROR 9999
+
 typedef int TElememtoA;
 typedef struct nodo{
         TElememtoA dato;
@@ -35,7 +38,8 @@ int min(arbol a){
             return a->dato;
         else
             return min(a->izq);
-    }
+    } else
+        return ERROR;
 }
 
 void addnodo(arbol* a, TElememtoA e) {
