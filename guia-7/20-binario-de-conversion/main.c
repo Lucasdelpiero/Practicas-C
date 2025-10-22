@@ -15,10 +15,11 @@ int grado(arbol a);
 void altura(arbol a, int actAlt,int *maxAlt);
 int alturaInt(arbol a);
 int maxGrado(arbol a);
+void mGrado(arbol a, int *max);
 
 int main(){
     arbol a;
-    int k, total = 0, cant = 0, alt = 0;
+    int k, total = 0, cant = 0, alt = 0, mGrad = 0;
 
     addnodo(&a, 13);
     addnodo(&a->izq, 1);
@@ -53,6 +54,10 @@ int main(){
     altura(a, 1, &alt);
     printf("La altura del arbol original era: %d\n", alt);
     printf("La altura del arbol original era: %d\n", alturaInt(a));
+
+    mGrado(a, &mGrad);
+    //printf("El grado del arbol original es: %d\n", mGrad);
+    printf("El grado del arbol original es: %d\n", maxGrado(a));
 
     return 0;
 
@@ -90,7 +95,7 @@ void totalK(arbol a, int k, int * total, int * cant){
 
 
 int grado(arbol a) {
-    int ini = a->dato;
+    //int ini = a->dato;
     int cont = 0;
     if (a != NULL && a->izq != NULL){
         a = a->izq;
@@ -135,16 +140,32 @@ int alturaInt(arbol a) {
 
 // d
 int maxGrado(arbol a) {
-    arbol subI, subD;
+    int maxIzq, maxDer, gradoAct;
     if (a == NULL)
         return 0;
     else {
-        subI = maxGrado(a->izq);
-        subD = maxGrado(a->der);
-        if (subI > subD)
-            return subI;
+        maxIzq = maxGrado(a->izq);
+        maxDer = maxGrado(a->der);
+        gradoAct = grado(a);
+        if (gradoAct > maxIzq && gradoAct > maxDer)
+            return gradoAct;
         else
-            return subD;
+            if (maxIzq > maxDer)
+            return maxIzq;
+        else
+            return maxDer;
+    }
+}
+
+// d con void
+void mGrado(arbol a, int *max) {
+    int gr;
+    if (a != NULL){
+        mGrado(a->izq, max);
+        mGrado(a->der, max);
+        gr = grado(a);
+        if (gr > *max)
+            *max = gr;
     }
 }
 
