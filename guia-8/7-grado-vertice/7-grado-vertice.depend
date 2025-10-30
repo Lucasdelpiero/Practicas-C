@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1761783464 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\grafos.c
+	"grafos.h"
+	<stdlib.h>
+
+1761781181 c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\grafos.h
+
+1761783440 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-8\7-grado-vertice\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../../librerias/grafos.h"
+
