@@ -3,7 +3,7 @@
 
 
 #endif // header guard
-#define MAX 10
+#define MAX 20
 #define N 5
 
 void cargarMatrizGrafo(int mat[MAX][MAX], int n);
