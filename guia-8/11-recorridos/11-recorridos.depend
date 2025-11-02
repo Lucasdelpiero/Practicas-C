@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1762116527 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\guia-8\11-recorridos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../../librerias/grafos.h"
+	"../../librerias/colas.h"
+
+1762113061 c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\grafos.h
+
+1761783464 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\grafos.c
+	"grafos.h"
+	<stdlib.h>
+
+1758317505 source:c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\colas.c
+	"colas.h"
+	<stdlib.h>
+
+1758317485 c:\users\cabro\onedrive\desktop\progra b\practicas-c\librerias\colas.h
+
