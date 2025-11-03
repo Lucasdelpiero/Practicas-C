@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../librerias/grafos.h" />
+		<Unit filename="../../librerias/pilas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../librerias/pilas.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

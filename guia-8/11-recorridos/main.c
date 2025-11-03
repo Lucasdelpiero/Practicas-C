@@ -2,13 +2,17 @@
 #include <stdlib.h>
 #include "../../librerias/grafos.h"
 #include "../../librerias/colas.h"
+#include "../../librerias/pilas.h"
+
 
 #define MAXM 20
 #define N 12
 
 void cargaDatos(int mat[][MAXM]); // Datos de la matriz de la teoria
 int todosVisitados(int vec[N], int n);
+void recorridoProfundidad(int mat[][MAXM], int n, char nom[MAXM], int *compConexas); // a
 void recorridoAmplitud(int mat[][MAXM], int n, char nom[MAXM], int * compConexas); // b
+int adyacenteNoVisitado(int mat[][MAXM], int n, int vec[], int x);
 
 int main()
 {
@@ -17,6 +21,8 @@ int main()
     cargaDatos(grafo);
     mostrarMatriz(grafo, N);
     recorridoAmplitud(grafo, N, nom, &compConexas);
+    printf("El grafo tiene %d componentes conexas\n", compConexas);
+    recorridoProfundidad(grafo, N, nom, &compConexas);
     printf("El grafo tiene %d componentes conexas\n", compConexas);
 
     return 0;
@@ -59,6 +65,57 @@ void cargaDatos(int mat[][MAXM]) {
     mat[11][8] = 1;
 }
 
+
+// a FALTA QUE FUNCIONE PARA MAS DE 1 COMP CONEXA Y DEVUELVA COMPONENTES CONEXAS
+void recorridoProfundidad(int mat[][MAXM], int n, char nom[MAXM], int *compConexas){
+    TpilaE pila;
+    int vv[N] = {0};
+    int INI;
+    TelemP vertice;
+    INI = 0;
+    vv[INI] = 1;
+    int ady;
+    int i = 0;
+    vv[11] = 1;
+    vv[10] = 1;
+    vv[9] = 1;
+    vv[8] = 1;
+
+    iniciaPe(&pila);
+    ponePe(&pila, INI);
+    printf("%c ", nom[INI]);
+    i++;
+
+    while (i != n ){
+        vertice = consultaPe(pila);
+        ady = adyacenteNoVisitado(mat, n, vv, vertice);
+        if (ady != -1) {
+            ponePe(&pila, ady);
+            printf("%c ", nom[ady]);
+            vv[ady] = 1;
+        } else {
+            if (!vaciaPe(pila))
+                sacaPe(&pila, &vertice);
+        }
+        i++;
+    }
+    //*compConexas = i;
+    printf("\n");
+}
+
+int adyacenteNoVisitado(int mat[][MAXM], int n, int vec[], int x){
+    int i, enco = 0;
+    while (i < n && !enco) {
+        if (mat[x][i] == 1 && vec[i] != 1)
+            enco = 1;
+        else
+            i++;
+    }
+    if (enco)
+        return i;
+    else
+        return -1;
+}
 
 //b
 void recorridoAmplitud(int mat[][MAXM], int n, char nom[MAXM], int *compConexas){
