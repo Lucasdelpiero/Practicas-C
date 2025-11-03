@@ -47,8 +47,8 @@ void cargarMatrizDigrafo(int mat[MAX][MAX], int n) {
 // LISTA ===============================================================================================================
 
 // Crea un nuevo nodo
-Nodo* nuevoNodo(int destino) {
-    Nodo* aux = (Nodo*) malloc(sizeof(Nodo));
+NodoL* nuevoNodo(int destino) {
+    NodoL* aux = (NodoL*) malloc(sizeof(NodoL));
     aux->destino = destino;
     aux->sig = NULL;
     return aux;
@@ -72,7 +72,7 @@ void cargarLista(ListaAdy L) {
     for (int i = 0; i < N; i++) {
         for (int j = N - 1; j >= 0; j--) { // inverso para mantener orden ascendente al insertar al inicio
             if (datos[i][j] == 1) {
-                Nodo* nuevo = nuevoNodo(j);
+                NodoL* nuevo = nuevoNodo(j);
                 nuevo->sig = L[i];
                 L[i] = nuevo;
             }
@@ -85,7 +85,7 @@ void mostrarLista(ListaAdy L) {
     printf("Lista de adyacencia del grafo:\n\n");
     for (int i = 0; i < N; i++) {
         printf("Vertice %d -> ", i);
-        Nodo* aux = L[i];
+        NodoL* aux = L[i];
         if (!aux) printf("(sin adyacencias)");
         while (aux != NULL) {
             printf("%d ", aux->destino);
@@ -98,9 +98,9 @@ void mostrarLista(ListaAdy L) {
 // Libera la memoria de todas las listas
 void liberarLista(ListaAdy L) {
     for (int i = 0; i < N; i++) {
-        Nodo* act = L[i];
+        NodoL* act = L[i];
         while (act != NULL) {
-            Nodo* aux = act;
+            NodoL* aux = act;
             act = act->sig;
             free(aux);
         }
