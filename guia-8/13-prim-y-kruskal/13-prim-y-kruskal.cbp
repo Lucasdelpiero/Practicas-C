@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../librerias/grafos.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../librerias/grafos.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
